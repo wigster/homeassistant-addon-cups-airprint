@@ -10,10 +10,9 @@ bashio::log.info "Preparing directories"
 # Create if not exists
 if [ ! -d "/data/cups" ]; then
   cp -v -R /etc/cups /data
+fi
   rm -v -fR /etc/cups
   ln -v -s /data/cups /etc/cups
-fi
-
 bashio::log.info "Starting CUPS server as CMD from S6"
 
 cupsd -f
